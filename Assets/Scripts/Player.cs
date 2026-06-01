@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public CircleCollider2D Collider;
     public GameObject battleBox;
     public TMP_Text HitText;
+    public TMP_Text TimeText;
+    private float TimeElapsed = 0f;
     public int HitTimes = 0;
     public float InvFrames = 1f;
     private float InvCurr = 0f;
@@ -34,6 +36,9 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        TimeElapsed += Time.deltaTime;
+        int seconds = Mathf.FloorToInt(TimeElapsed);
+        TimeText.text = $"Time: {seconds}";
         if (Input.GetMouseButton(0))
         {
             Vector3 mouseScreenPos = Input.mousePosition;
