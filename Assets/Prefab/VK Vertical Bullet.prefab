@@ -115,8 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1198347a6a9d0ab488d93e1bf2e4ded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveTime: 5
+  liveTime: 2.5
   isHorisontal: 0
-  minFireRate: 1
-  maxFireRate: 1.4
+  minFireRate: 0.5
+  maxFireRate: 0.8
   miniBullet: {fileID: 7999623788679226523, guid: 05dd6b9b48418154283d5408dee3f3cf, type: 3}

@@ -97,9 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cc45c21c8902b43b157c5015239149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToShoot: 1
-  timeToStop: 2
-  fireRate: 0.07
+  timeToShoot: 0.5
+  timeToStop: 1.2
+  fireRate: 0.04
   fireArc: 90
   miniBullet: {fileID: 6683328007498262357, guid: e298e14306da1a848916ac85a93fda51, type: 3}
-  playerToTarget: {fileID: 0}

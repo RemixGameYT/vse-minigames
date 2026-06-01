@@ -18,7 +18,6 @@ public class TelegramBullet : MonoBehaviour
     {
         playerToTarget = GameObject.FindWithTag("Player");
         sprite = gameObject.GetComponent<Renderer>();
-        Destroy(gameObject, liveTime);
     }
 
     void Update()
@@ -37,8 +36,12 @@ public class TelegramBullet : MonoBehaviour
         {
             sprite.material.color = new Color((255-128*(counter-timeStopAiming)/(timeToShoot - timeStopAiming))/255, (255 - 255 * (counter - timeStopAiming) / (timeToShoot - timeStopAiming)) / 255, (255 - 255 * (counter - timeStopAiming) / (timeToShoot - timeStopAiming)) / 255);
         }
-        counter += Time.deltaTime;
-
+        Player playerScript = playerToTarget.GetComponent<Player>();
+        if (playerScript.Check_If_Started())
+        {
+            counter += Time.deltaTime;
+            Destroy(gameObject, liveTime);
+        }
     }
     void RotateToTarget(Transform target)
     {

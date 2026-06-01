@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cc45c21c8902b43b157c5015239149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToShoot: 1
-  timeToStop: 4
-  fireRate: 0.7
-  fireArc: 90
+  timeToShoot: 0
+  timeToStop: 2
+  fireRate: 0.6
+  fireArc: 60
   miniBullet: {fileID: 7136733577901993069, guid: 35e74878044e64c49a429feae7a402ef, type: 3}

@@ -17,18 +17,33 @@ public class PlayerAttacker : MonoBehaviour
     public GameObject VKHorizontalBullet;
     public GameObject SnapChatBullet;
     public float VKOffset = 40f;
-    public float fireRate = 0.5f;
-    private float timeTillNextSpawn = 1f;
+    public float fireRate = 1.1f;
+    public float maxFireRate = 0.5f;
+    public float fireRateChange = 0.1f;
+    public float timeTillNextSpawn = 1f;
+    public float telegramBulletBuff = 0.2f;
     void Start()
     {
 
     }
     void Update()
     {
-        timeTillNextSpawn -= Time.deltaTime;
+        Player playerScript = playerObject.GetComponent<Player>();
+        if (playerScript.Check_If_Started())
+        {
+            timeTillNextSpawn -= Time.deltaTime;
+        }
         if (timeTillNextSpawn <= 0)
         {
             int attackChoice = UnityEngine.Random.Range(0, 101);
+            if (fireRate > maxFireRate)
+            {
+                fireRate -= fireRateChange;
+                if (attackChoice<40)
+                {
+                    fireRate += fireRateChange / 4;
+                }
+            }
             if (attackChoice < 40)
             {
                 int telegramBulletsPerAttack = UnityEngine.Random.Range(minTelegramBulletsPerAttack, maxTelegramBulletsPerAttack+1);
@@ -46,10 +61,15 @@ public class PlayerAttacker : MonoBehaviour
             {
                 SpawnSnapChatBullet();
             }
-            else
+            else if (playerScript.HitTimes == 0)
             {
                 int telegramBulletsPerAttack = UnityEngine.Random.Range(minTelegramBulletsPerAttack, maxTelegramBulletsPerAttack + 1);
                 SpawnMAXBullet(telegramBulletsPerAttack);
+            }
+            else
+            {
+                int telegramBulletsPerAttack = UnityEngine.Random.Range(minTelegramBulletsPerAttack, maxTelegramBulletsPerAttack + 1);
+                SpawnTelegramBullets(telegramBulletsPerAttack);
             }
             timeTillNextSpawn = fireRate;
         }
@@ -58,7 +78,7 @@ public class PlayerAttacker : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            timeTillNextSpawn /= 0.6f;
+            timeTillNextSpawn -= telegramBulletBuff;
             float distanceFromPlayer = UnityEngine.Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
             Vector3 target = playerObject.transform.position;
             float directonRad = UnityEngine.Random.Range(-90, 90);

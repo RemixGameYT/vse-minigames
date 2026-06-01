@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8fd96024255044ba63a48dba3f0eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToShoot: 2
-  timeStopAiming: 1.3
-  speed: 200
+  timeToShoot: 0.8
+  timeStopAiming: 0.4
+  speed: 250
   liveTime: 5
   direction: {x: 0, y: 0, z: 0}
   sprite: {fileID: 0}

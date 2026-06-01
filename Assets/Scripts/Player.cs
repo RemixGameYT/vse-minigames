@@ -25,22 +25,39 @@ public class Player : MonoBehaviour
     private float blink = 0f;
     public int blinkAmount = 6;
     public Renderer currentSprite;
+    private bool hasStarted = false;
+    private int maxTime = 15;
 
     void Start()
     {
-        battleBox.transform.localScale=transform.localScale/5*BoxLimits/50*BoxScale;
-        BoxLimits-=transform.localScale.y/2;
+        battleBox.transform.localScale = transform.localScale / 5 * BoxLimits / 50 * BoxScale;
+        BoxLimits -= transform.localScale.y / 2;
         Collider = GetComponent<CircleCollider2D>();
         currentSprite = GetComponent<Renderer>();
         Instantiate(battleBox);
     }
     void Update()
     {
-        TimeElapsed += Time.deltaTime;
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.V) && !hasStarted)
+        {
+            maxTime = 10000;
+        }
+        if (hasStarted)
+        {
+            TimeElapsed += Time.deltaTime;
+        }
         int seconds = Mathf.FloorToInt(TimeElapsed);
-        TimeText.text = $"Time: {seconds}";
+        if (seconds == maxTime)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            TimeText.text = $"Time left: {maxTime - seconds - 1}";
+        }
         if (Input.GetMouseButton(0))
         {
+            hasStarted = true;
             Vector3 mouseScreenPos = Input.mousePosition;
             mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
             mouseWorldPos.z = 0f;
@@ -49,8 +66,8 @@ public class Player : MonoBehaviour
         if (InvCurr > 0)
         {
             InvCurr -= Time.deltaTime;
-            blink = Mathf.Cos(InvCurr*4*blinkAmount);
-            currentSprite.material.color = new Color((191+64*blink)/255, 0f, 0f);
+            blink = Mathf.Cos(InvCurr * 4 * blinkAmount);
+            currentSprite.material.color = new Color((191 + 64 * blink) / 255, 0f, 0f);
         }
         else
         {
@@ -63,7 +80,7 @@ public class Player : MonoBehaviour
         Vector2 newPos;
         float dist;
         dist = Vector2.Distance(currentPos, moveToPos);
-        if (dist < Speed*Time.deltaTime)
+        if (dist < Speed * Time.deltaTime)
         {
             newPos = currentPos + direction * dist * Time.deltaTime;
         }
@@ -80,9 +97,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Bullet" && InvCurr <= 0)
         {
             HitTimes += 1;
-            HitText.text = $"Times hit: {HitTimes}";
+            HitText.text = $"Points: {Mathf.Max(5 - HitTimes, 0)}";
             Destroy(other.gameObject);
             InvCurr = InvFrames;
         }
+    }
+    public bool Check_If_Started()
+    {
+        return hasStarted;
     }
 }

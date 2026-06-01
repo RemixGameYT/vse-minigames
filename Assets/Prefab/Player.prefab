@@ -136,15 +136,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveToPos: {x: 0, y: 0}
   currentPos: {x: 0, y: 0}
-  Speed: 50
+  Speed: 75
   mouseWorldPos: {x: 0, y: 0, z: 0}
   BoxLimits: 30
   BoxScale: 1
   Collider: {fileID: 0}
   battleBox: {fileID: 4378248374241169984, guid: 1bdefe47c32598a41a089716d98531e7, type: 3}
   HitText: {fileID: 0}
+  TimeText: {fileID: 0}
   HitTimes: 0
-  InvFrames: 1
+  InvFrames: 0.7
   blinkAmount: 6
   currentSprite: {fileID: 0}
 --- !u!50 &4167219991504166977
