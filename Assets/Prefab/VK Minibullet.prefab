@@ -168,5 +168,29 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cb21953b8e2b0f640a4be6f59e44b1f9, type: 3}
   - {fileID: 21300000, guid: 690335d473a21514ead06fd8b446ce49, type: 3}
   - {fileID: 21300000, guid: 21b62b92b7e5a03419fce54193117608, type: 3}
+  - {fileID: 21300000, guid: 15d8aeb2474ef5a4080e8f10b278b4bc, type: 3}
+  - {fileID: 21300000, guid: f7f735952508704448e6dee2dc298ce0, type: 3}
+  - {fileID: 21300000, guid: f4d13630ea66d924a8e085640bcd99a8, type: 3}
+  - {fileID: 21300000, guid: 09048278c8768944991931abdf01972a, type: 3}
+  - {fileID: 21300000, guid: 6106c69e92abf0f429cdb276bcd14e68, type: 3}
+  - {fileID: 21300000, guid: 1c2315d57f7f5ea4f963dd93e9e57616, type: 3}
+  - {fileID: 21300000, guid: 31edc4b7258255d4a87034f6840a66e4, type: 3}
+  - {fileID: 21300000, guid: 7c2466af978064f4aab2c27b2510e668, type: 3}
+  - {fileID: 21300000, guid: 351ddce59ff56ea4da2ae125ad0c05e4, type: 3}
+  - {fileID: 21300000, guid: 53f3fb626be1e6f4ca2845bb6a98d456, type: 3}
+  - {fileID: 21300000, guid: 7d5e8e676ffbcec4db40e262fa0b97ce, type: 3}
+  - {fileID: 21300000, guid: 77b4d5cb5fdb31f4597b28a33cff1653, type: 3}
+  - {fileID: 21300000, guid: 1b1207c550c835e469077df1e5772336, type: 3}
+  - {fileID: 21300000, guid: 5418f2a77df64bc479e323170606c3ed, type: 3}
+  - {fileID: 21300000, guid: 85f895b344ae0bf4a95c14f6fe09c12d, type: 3}
+  - {fileID: 21300000, guid: 4658a651bf7335641bc134c6d3e0ea59, type: 3}
+  - {fileID: 21300000, guid: 211cebe536fd0294ca9eab510da1c63e, type: 3}
+  - {fileID: 21300000, guid: c5cac2b2afd7135409423f71876ac547, type: 3}
+  - {fileID: 21300000, guid: dd850325d7089194dbd321df92b4da02, type: 3}
+  - {fileID: 21300000, guid: 38b42ebe7e885d6448f4ae26e253d921, type: 3}
+  - {fileID: 21300000, guid: 3185fd0c5fba427448f9b775a7e38501, type: 3}
+  - {fileID: 21300000, guid: fcf1fac4a92969d4c840b5c7fc263887, type: 3}
+  - {fileID: 21300000, guid: 0219a0f14fd4615449b43a1a6df5a508, type: 3}
+  - {fileID: 21300000, guid: 4871db4961a328d419b975d6e7d2befc, type: 3}
   currentSpriteRenderer: {fileID: 0}
-  spriteChangeFrequency: 0.2
+  spriteChangeFrequency: 0.1

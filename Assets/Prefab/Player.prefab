@@ -148,6 +148,10 @@ MonoBehaviour:
   InvFrames: 0.7
   blinkAmount: 6
   currentSprite: {fileID: 0}
+  TelegramDamage: 18
+  TikTokDamage: 4
+  SnapChatDamage: 11
+  VKDamage: 13
 --- !u!50 &4167219991504166977
 Rigidbody2D:
   serializedVersion: 4

@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     public SpriteRenderer currentSprite;
     private bool hasStarted = false;
     private int maxTime = 15;
+    public int TelegramDamage;
+    public int TikTokDamage;
+    public int SnapChatDamage;
+    public int VKDamage;
 
     void Start()
     {
@@ -96,28 +100,28 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "TelegramBullet" && InvCurr <= 0)
         {
-            Score -= 26;
+            Score -= TelegramDamage;
             HitText.text = $"Score: {Mathf.Max(Score, 0)}";
             Destroy(other.gameObject);
             InvCurr = InvFrames;
         }
         if (other.gameObject.tag == "TikTokBullet" && InvCurr <= 0)
         {
-            Score -= 7;
+            Score -= TikTokDamage;
             HitText.text = $"Score: {Mathf.Max(Score, 0)}";
             Destroy(other.gameObject);
             InvCurr = InvFrames/4;
         }
         if (other.gameObject.tag == "VKBullet" && InvCurr <= 0)
         {
-            Score -= 19;
+            Score -= VKDamage;
             HitText.text = $"Score: {Mathf.Max(Score, 0)}";
             Destroy(other.gameObject);
             InvCurr = InvFrames;
         }
         if (other.gameObject.tag == "SnapChatBullet" && InvCurr <= 0)
         {
-            Score -= 14;
+            Score -= SnapChatDamage;
             HitText.text = $"Score: {Mathf.Max(Score, 0)}";
             Destroy(other.gameObject);
             InvCurr = InvFrames;
