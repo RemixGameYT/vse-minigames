@@ -39,10 +39,6 @@ public class PlayerAttacker : MonoBehaviour
             if (fireRate > maxFireRate)
             {
                 fireRate -= fireRateChange;
-                if (attackChoice<40)
-                {
-                    fireRate += fireRateChange / 4;
-                }
             }
             if (attackChoice < 40)
             {
@@ -61,7 +57,7 @@ public class PlayerAttacker : MonoBehaviour
             {
                 SpawnSnapChatBullet();
             }
-            else if (playerScript.HitTimes == 0)
+            else if (playerScript.Score == 100)
             {
                 int telegramBulletsPerAttack = UnityEngine.Random.Range(minTelegramBulletsPerAttack, maxTelegramBulletsPerAttack + 1);
                 SpawnMAXBullet(telegramBulletsPerAttack);

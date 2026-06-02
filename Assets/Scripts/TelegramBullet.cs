@@ -13,11 +13,11 @@ public class TelegramBullet : MonoBehaviour
     private GameObject playerToTarget;
     private float counter = 0f;
     public Vector3 direction;
-    public Renderer sprite;
+    public SpriteRenderer sprite;
     void Start()
     {
         playerToTarget = GameObject.FindWithTag("Player");
-        sprite = gameObject.GetComponent<Renderer>();
+        sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class TelegramBullet : MonoBehaviour
         }
         else 
         {
-            sprite.material.color = new Color((255-128*(counter-timeStopAiming)/(timeToShoot - timeStopAiming))/255, (255 - 255 * (counter - timeStopAiming) / (timeToShoot - timeStopAiming)) / 255, (255 - 255 * (counter - timeStopAiming) / (timeToShoot - timeStopAiming)) / 255);
+            sprite.color = new Color((255-255*(counter-timeStopAiming)/(timeToShoot - timeStopAiming))/255, (255 - 128 * (counter - timeStopAiming) / (timeToShoot - timeStopAiming)) / 255, 1f);
         }
         Player playerScript = playerToTarget.GetComponent<Player>();
         if (playerScript.Check_If_Started())

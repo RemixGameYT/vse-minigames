@@ -8,7 +8,8 @@ public class TikTokAndSnapchatBullet : MonoBehaviour
     public float timeToStop = 2f;
     public float fireRate = 0.1f;
     public int fireArc = 90;
-    public GameObject miniBullet;
+    public GameObject miniBullet1;
+    public GameObject miniBullet2;
     private GameObject playerToTarget;
     private float counter = 0f;
     private float fireCounter = 0f;
@@ -39,6 +40,14 @@ public class TikTokAndSnapchatBullet : MonoBehaviour
         float randomOffset = Random.Range(-fireArc / 2f, fireArc / 2f);
         float finalAngle = baseAngle + randomOffset;
         Quaternion bulletRotation = Quaternion.Euler(0, 0, finalAngle);
-        Instantiate(miniBullet, transform.position, bulletRotation);
+        int bulletToSpawn = UnityEngine.Random.Range(0, 2);
+        if (bulletToSpawn == 0)
+        {
+            Instantiate(miniBullet1, transform.position, bulletRotation);
+        }
+        else
+        {
+            Instantiate(miniBullet2, transform.position, bulletRotation);
+        }
     }
 }

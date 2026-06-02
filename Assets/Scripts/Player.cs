@@ -19,21 +19,21 @@ public class Player : MonoBehaviour
     public TMP_Text HitText;
     public TMP_Text TimeText;
     private float TimeElapsed = 0f;
-    public int HitTimes = 0;
+    public int Score = 100;
     public float InvFrames = 1f;
     private float InvCurr = 0f;
     private float blink = 0f;
     public int blinkAmount = 6;
-    public Renderer currentSprite;
+    public SpriteRenderer currentSprite;
     private bool hasStarted = false;
     private int maxTime = 15;
 
     void Start()
     {
-        battleBox.transform.localScale = transform.localScale / 5 * BoxLimits / 50 * BoxScale;
+        battleBox.transform.localScale = transform.localScale / 6.7f * BoxLimits * BoxScale;
         BoxLimits -= transform.localScale.y / 2;
         Collider = GetComponent<CircleCollider2D>();
-        currentSprite = GetComponent<Renderer>();
+        currentSprite = GetComponent<SpriteRenderer>();
         Instantiate(battleBox);
     }
     void Update()
@@ -67,13 +67,13 @@ public class Player : MonoBehaviour
         {
             InvCurr -= Time.deltaTime;
             blink = Mathf.Cos(InvCurr * 4 * blinkAmount);
-            currentSprite.material.color = new Color((191 + 64 * blink) / 255, 0f, 0f);
+            currentSprite.color = new Color((191 + 64 * blink) / 255, (191 + 64 * blink) / 255, (191 + 64 * blink) / 255);
         }
         else
         {
             InvCurr = 0f;
             blink = 1f;
-            currentSprite.material.color = new Color(1f, 0f, 0f);
+            currentSprite.color = new Color(1f, 1f, 1f);
         }
         currentPos = transform.position;
         Vector2 direction = (moveToPos - currentPos).normalized;
@@ -94,10 +94,31 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Bullet" && InvCurr <= 0)
+        if (other.gameObject.tag == "TelegramBullet" && InvCurr <= 0)
         {
-            HitTimes += 1;
-            HitText.text = $"Points: {Mathf.Max(5 - HitTimes, 0)}";
+            Score -= 26;
+            HitText.text = $"Score: {Mathf.Max(Score, 0)}";
+            Destroy(other.gameObject);
+            InvCurr = InvFrames;
+        }
+        if (other.gameObject.tag == "TikTokBullet" && InvCurr <= 0)
+        {
+            Score -= 7;
+            HitText.text = $"Score: {Mathf.Max(Score, 0)}";
+            Destroy(other.gameObject);
+            InvCurr = InvFrames/4;
+        }
+        if (other.gameObject.tag == "VKBullet" && InvCurr <= 0)
+        {
+            Score -= 19;
+            HitText.text = $"Score: {Mathf.Max(Score, 0)}";
+            Destroy(other.gameObject);
+            InvCurr = InvFrames;
+        }
+        if (other.gameObject.tag == "SnapChatBullet" && InvCurr <= 0)
+        {
+            Score -= 14;
+            HitText.text = $"Score: {Mathf.Max(Score, 0)}";
             Destroy(other.gameObject);
             InvCurr = InvFrames;
         }
