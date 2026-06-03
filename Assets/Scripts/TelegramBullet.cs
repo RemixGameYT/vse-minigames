@@ -14,8 +14,11 @@ public class TelegramBullet : MonoBehaviour
     private float counter = 0f;
     public Vector3 direction;
     public SpriteRenderer sprite;
+    private bool alreadyShot = false;
+    public PlaySound soundPlayer;
     void Start()
     {
+        soundPlayer = GetComponent<PlaySound>();
         playerToTarget = GameObject.FindWithTag("Player");
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
@@ -30,6 +33,11 @@ public class TelegramBullet : MonoBehaviour
         }
         else if (counter > timeToShoot)
         {
+            if (!alreadyShot)
+            {
+                alreadyShot = true;
+                soundPlayer.PlaySFX(0);
+            }
             transform.position = transform.position + direction * speed * Time.deltaTime;
         }
         else 

@@ -13,8 +13,11 @@ public class TikTokAndSnapchatBullet : MonoBehaviour
     private GameObject playerToTarget;
     private float counter = 0f;
     private float fireCounter = 0f;
+    private bool alreadyShot = false;
+    public PlaySound soundPlayer;
     void Start()
     {
+        soundPlayer = GetComponent<PlaySound>();
         playerToTarget = GameObject.FindWithTag("Player");
         Destroy(gameObject, timeToStop);
     }
@@ -27,6 +30,11 @@ public class TikTokAndSnapchatBullet : MonoBehaviour
             fireCounter += Time.deltaTime;
             if (fireCounter >= fireRate)
             {
+                if (!alreadyShot)
+                {
+                    alreadyShot = true;
+                    soundPlayer.PlaySFX(0);
+                }
                 fireCounter = 0f;
                 FireSpreadBullet();
             }

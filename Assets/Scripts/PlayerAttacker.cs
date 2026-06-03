@@ -16,18 +16,22 @@ public class PlayerAttacker : MonoBehaviour
     public GameObject VKVerticalBullet;
     public GameObject VKHorizontalBullet;
     public GameObject SnapChatBullet;
+    public GameObject MaxJumpscare;
+    public float MaxJumpscareSpeed = 5f;
     public float VKOffset = 40f;
     public float fireRate = 1.1f;
     public float maxFireRate = 0.5f;
     public float fireRateChange = 0.1f;
     public float timeTillNextSpawn = 1f;
     public float telegramBulletBuff = 0.2f;
+    public PlaySound soundPlayer;
     void Start()
     {
-
+        soundPlayer = GetComponent<PlaySound>();
     }
     void Update()
     {
+        ChangeMaxOpacity();
         Player playerScript = playerObject.GetComponent<Player>();
         if (playerScript.Check_If_Started())
         {
@@ -72,6 +76,7 @@ public class PlayerAttacker : MonoBehaviour
     }
     private void SpawnTelegramBullets(int amount)
     {
+        soundPlayer.PlaySFX(1);
         for (int i = 0; i < amount; i++)
         {
             timeTillNextSpawn -= telegramBulletBuff;
@@ -85,6 +90,7 @@ public class PlayerAttacker : MonoBehaviour
     }
     private void SpawnTikTokBullets()
     {
+        soundPlayer.PlaySFX(2);
         float distanceFromPlayer = UnityEngine.Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
         Vector3 target = playerObject.transform.position;
         float directonRad = UnityEngine.Random.Range(-90, 90);
@@ -94,6 +100,7 @@ public class PlayerAttacker : MonoBehaviour
     }
     private void SpawnVKBullets()
     {
+        soundPlayer.PlaySFX(3);
         Vector3 newPos = transform.position;
         Vector3 horizontalOffset = new Vector3(0f, VKOffset, 0f);
         Vector3 verticalOffset = new Vector3(VKOffset, 0f, 0f);
@@ -103,6 +110,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void SpawnSnapChatBullet()
     {
+        soundPlayer.PlaySFX(4);
         float distanceFromPlayer = UnityEngine.Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
         Vector3 target = playerObject.transform.position;
         float directonRad = UnityEngine.Random.Range(-90, 90);
@@ -112,6 +120,11 @@ public class PlayerAttacker : MonoBehaviour
     }
     private void SpawnMAXBullet(int amount)
     {
+        SpriteRenderer maxRenderer = MaxJumpscare.GetComponent<SpriteRenderer>();
+        Color maxOpacity = maxRenderer.color;
+        maxOpacity.a = 1f;
+        maxRenderer.color = maxOpacity;
+        soundPlayer.PlaySFX(0);
         float distanceFromPlayer = UnityEngine.Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
         Vector3 target = playerObject.transform.position;
         float directonRad = UnityEngine.Random.Range(-90, 90);
@@ -138,5 +151,12 @@ public class PlayerAttacker : MonoBehaviour
             newPos = target + bulletDirection;
             Instantiate(TelegramBullet, newPos, Quaternion.identity);
         }
+    }
+    private void ChangeMaxOpacity()
+    {
+        SpriteRenderer maxRenderer = MaxJumpscare.GetComponent<SpriteRenderer>();
+        Color maxOpacity = maxRenderer.color;
+        maxOpacity.a -= Time.deltaTime*MaxJumpscareSpeed;
+        maxRenderer.color = maxOpacity;
     }
 }

@@ -12,8 +12,11 @@ public class VKBullet : MonoBehaviour
     private float neededFireProgress = 0f;
     public GameObject miniBullet;
     private Quaternion bulletRotation;
+    private bool alreadyShot = false;
+    public PlaySound soundPlayer;
     void Start()
     {
+        soundPlayer = GetComponent<PlaySound>();
         Destroy(gameObject, liveTime);
         neededFireProgress = Random.Range(minFireRate, maxFireRate);
     }
@@ -31,6 +34,11 @@ public class VKBullet : MonoBehaviour
             else
             {
                 bulletRotation = Quaternion.Euler(0,0,180);
+            }
+            if (!alreadyShot)
+            {
+                alreadyShot = true;
+                soundPlayer.PlaySFX(0);
             }
             Instantiate(miniBullet, transform.position, bulletRotation);
             fireProgress = 0f;
