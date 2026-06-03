@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7543344662781037976}
   - component: {fileID: 4820130298140290594}
   - component: {fileID: 4107408451785539090}
-  - component: {fileID: 4344162145927164711}
   - component: {fileID: 2831228226819016588}
+  - component: {fileID: 4344162145927164711}
   - component: {fileID: 821623422305496185}
   m_Layer: 0
   m_Name: VK Vertical Bullet
@@ -102,26 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHorizontalHoverDistance: 0
   maxVerticalHoverDistance: 30
-  hoverSpeed: 3
+  hoverSpeed: 5
   hoverValue: 0
   startPosition: {x: 0, y: 0, z: 0}
---- !u!114 &4344162145927164711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056098490901275187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1198347a6a9d0ab488d93e1bf2e4ded3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  liveTime: 2.5
-  isHorisontal: 0
-  minFireRate: 0.5
-  maxFireRate: 0.8
-  miniBullet: {fileID: 7999623788679226523, guid: 05dd6b9b48418154283d5408dee3f3cf, type: 3}
 --- !u!114 &2831228226819016588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +118,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
+  maxAudioSource: {fileID: 0}
   clip:
-  - {fileID: 8300000, guid: 4e742d6aff3ce8e4ea8b58daf5b9a4eb, type: 3}
+  - {fileID: 8300000, guid: 44811872ce15dff45af23ab3d10a7c1f, type: 3}
+  - {fileID: 8300000, guid: 4338819d74c1c5142bf9c03999c81ea1, type: 3}
+  maxChecker: {fileID: 0}
+  maxHandler: {fileID: 0}
+  maxEffect: 0
+--- !u!114 &4344162145927164711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056098490901275187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1198347a6a9d0ab488d93e1bf2e4ded3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  liveTime: 1.5
+  isHorisontal: 0
+  minFireRate: 0.4
+  maxFireRate: 0.6
+  miniBullet: {fileID: 7999623788679226523, guid: 05dd6b9b48418154283d5408dee3f3cf, type: 3}
+  soundPlayer: {fileID: 0}
 --- !u!82 &821623422305496185
 AudioSource:
   m_ObjectHideFlags: 0

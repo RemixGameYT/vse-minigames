@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1522848691568053527}
   - component: {fileID: 6812057589827327367}
-  - component: {fileID: 4285509318857945032}
   - component: {fileID: -4887388584494467188}
+  - component: {fileID: 4285509318857945032}
   - component: {fileID: 6563719555710064724}
   m_Layer: 0
   m_Name: SnapChat Bullet
@@ -87,6 +87,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4887388584494467188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192474927227962826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f0d4c7d9cbd2449a21e7b47eeadb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  clip:
+  - {fileID: 8300000, guid: 2b476013da4490d47be2c49c58dd8861, type: 3}
+  - {fileID: 8300000, guid: c9fb6371254093341866b7ad72c1b920, type: 3}
+  maxChecker: {fileID: 0}
+  maxHandler: {fileID: 0}
+  maxEffect: 0
 --- !u!114 &4285509318857945032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,21 +124,7 @@ MonoBehaviour:
   fireArc: 60
   miniBullet1: {fileID: 7136733577901993069, guid: 35e74878044e64c49a429feae7a402ef, type: 3}
   miniBullet2: {fileID: 7136733577901993069, guid: 35e74878044e64c49a429feae7a402ef, type: 3}
---- !u!114 &-4887388584494467188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6192474927227962826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f0d4c7d9cbd2449a21e7b47eeadb0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip:
-  - {fileID: 8300000, guid: 4e742d6aff3ce8e4ea8b58daf5b9a4eb, type: 3}
+  soundPlayer: {fileID: 0}
 --- !u!82 &6563719555710064724
 AudioSource:
   m_ObjectHideFlags: 0

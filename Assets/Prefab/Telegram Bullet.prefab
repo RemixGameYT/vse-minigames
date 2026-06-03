@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1218221261009605754}
   - component: {fileID: 7144586476553945326}
   - component: {fileID: 6136273080498460801}
-  - component: {fileID: 2435197275921588834}
   - component: {fileID: -8176584909140046057}
+  - component: {fileID: 2435197275921588834}
   - component: {fileID: -8057490267892228329}
   m_Layer: 0
   m_Name: Telegram Bullet
@@ -137,6 +137,25 @@ PolygonCollider2D:
       - {x: -27, y: 0}
       - {x: 10, y: -20}
   m_UseDelaunayMesh: 0
+--- !u!114 &-8176584909140046057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910686695176236759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f0d4c7d9cbd2449a21e7b47eeadb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  clip:
+  - {fileID: 8300000, guid: 219e5ca3538e62245be2f4558df0ab9f, type: 3}
+  - {fileID: 8300000, guid: 8bb84194696c0284383bebc7eb5e9869, type: 3}
+  maxChecker: {fileID: 0}
+  maxHandler: {fileID: 0}
+  maxEffect: 0
 --- !u!114 &2435197275921588834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,21 +174,7 @@ MonoBehaviour:
   liveTime: 5
   direction: {x: 0, y: 0, z: 0}
   sprite: {fileID: 0}
---- !u!114 &-8176584909140046057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910686695176236759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f0d4c7d9cbd2449a21e7b47eeadb0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip:
-  - {fileID: 8300000, guid: 4e742d6aff3ce8e4ea8b58daf5b9a4eb, type: 3}
+  soundPlayer: {fileID: 0}
 --- !u!82 &-8057490267892228329
 AudioSource:
   m_ObjectHideFlags: 0

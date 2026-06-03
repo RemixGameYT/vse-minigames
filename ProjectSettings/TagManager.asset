@@ -9,6 +9,7 @@ TagManager:
   - TikTokBullet
   - VKBullet
   - SnapChatBullet
+  - Generator
   layers:
   - Default
   - TransparentFX

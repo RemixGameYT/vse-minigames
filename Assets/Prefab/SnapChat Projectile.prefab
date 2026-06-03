@@ -104,7 +104,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   startingScale: {x: 0, y: 0, z: 0}
   currentScale: 1
-  scalingSpeed: 1.6
+  scalingSpeed: 2
 --- !u!61 &9064312764738654536
 BoxCollider2D:
   m_ObjectHideFlags: 0

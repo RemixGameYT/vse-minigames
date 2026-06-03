@@ -144,8 +144,8 @@ MonoBehaviour:
   BoxScale: 1
   Collider: {fileID: 0}
   battleBox: {fileID: 4378248374241169984, guid: 1bdefe47c32598a41a089716d98531e7, type: 3}
-  HitText: {fileID: 0}
-  TimeText: {fileID: 0}
+  HitObject: {fileID: 0}
+  TimeObject: {fileID: 0}
   FinalText: {fileID: 0}
   GameOverText: {fileID: 0}
   MenuBG: {fileID: 0}
@@ -159,6 +159,11 @@ MonoBehaviour:
   TikTokDamage: 4
   SnapChatDamage: 11
   VKDamage: 13
+  soundPlayer: {fileID: 0}
+  textBlinkSpeed: 2
+  HitYet: 0
+  menuMusic: {fileID: 0}
+  timeClip: {fileID: 8300000, guid: 04cda5618ffec3c409e41cac8426f10b, type: 3}
 --- !u!50 &4167219991504166977
 Rigidbody2D:
   serializedVersion: 4
@@ -199,9 +204,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
+  maxAudioSource: {fileID: 0}
   clip:
-  - {fileID: 8300000, guid: 4e742d6aff3ce8e4ea8b58daf5b9a4eb, type: 3}
-  - {fileID: 8300000, guid: 4e742d6aff3ce8e4ea8b58daf5b9a4eb, type: 3}
+  - {fileID: 8300000, guid: 8447e693f0d87074aaa3319f1923b7db, type: 3}
+  - {fileID: 8300000, guid: 33041eb421c2fe843b78217e174cc1dc, type: 3}
+  maxChecker: {fileID: 0}
+  maxHandler: {fileID: 0}
+  maxEffect: 0
 --- !u!82 &4056944229171472048
 AudioSource:
   m_ObjectHideFlags: 0
