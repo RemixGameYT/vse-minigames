@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         soundPlayer = GetComponent<PlaySound>();
         battleBox.transform.localScale = transform.localScale / 6.7f * BoxLimits * BoxScale;
         BoxLimits -= transform.localScale.y / 2;
@@ -81,7 +82,6 @@ public class Player : MonoBehaviour
         {
             if (!hasStarted)
             {
-                Time.timeScale = 1f;
                 MenuBG.SetActive(false);
                 ScoreAndTimeCounters.SetActive(true);
                 hasStarted = true;

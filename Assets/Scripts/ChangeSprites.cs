@@ -6,6 +6,7 @@ public class ChangeSprites : MonoBehaviour
 {
     public List<Sprite> sprites;
     public SpriteRenderer currentSpriteRenderer;
+    public GameObject outlineMaker;
     public float spriteChangeFrequency = 0.3f;
     private float spriteChangeProgress = 0.2f;
     void Start()
@@ -22,6 +23,8 @@ public class ChangeSprites : MonoBehaviour
             spriteChangeProgress = 0;
             Sprite newSprite = sprites[UnityEngine.Random.Range(0, sprites.Count)];
             currentSpriteRenderer.sprite = newSprite;
+            SpriteRenderer shadeRenderer = outlineMaker.GetComponent<SpriteRenderer>();
+            shadeRenderer.sprite = newSprite;
         }
     }
 }
